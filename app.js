@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [process.env.CLIENT_URL],
+    origin: "https://localhost:5000",
     credentials: true,
   })
 );

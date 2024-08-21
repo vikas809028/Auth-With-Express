@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const MONGODB_URL =
-  process.env.MONGODB_URL || "mongodb://localhost:27017/my_databse";
+  "mongodb+srv://vikastiwari809028:database%40809028@cluster0.dlgt4hc.mongodb.net/AuthWithExpress?retryWrites=true&w=majority";
 const databaseconnect = () => {
   mongoose
     .connect(MONGODB_URL)

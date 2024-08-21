@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const JWT = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const SECRET = "SECRET";
 
 const userSchema = new Schema(
   {
@@ -48,7 +49,7 @@ userSchema.methods = {
         id: this._id,
         email: this.email,
       },
-      process.env.SECRET,
+      SECRET || process.env.SECRET,
       { expiresIn: "24h" }
     );
   },

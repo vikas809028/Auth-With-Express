@@ -4,7 +4,7 @@
 // }
 
 const JWT = require("jsonwebtoken");
-
+const SECRET = "SECRET";
 const jwtAuth = (req, res, next) => {
   const token = (req.cookies && req.cookies.token) || null;
 
@@ -15,7 +15,7 @@ const jwtAuth = (req, res, next) => {
     });
   }
   try {
-    const payload = JWT.verify(token, process.env.SECRET);
+    const payload = JWT.verify(token, SECRET || process.env.SECRET);
     req.user = { id: payload.id, email: payload.email };
   } catch (e) {
     return res.status(400).json({

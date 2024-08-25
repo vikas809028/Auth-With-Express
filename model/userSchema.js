@@ -49,7 +49,7 @@ userSchema.methods = {
         id: this._id,
         email: this.email,
       },
-      SECRET || process.env.SECRET,
+      process.env.SECRET,
       { expiresIn: "24h" }
     );
   },
